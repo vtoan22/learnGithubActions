@@ -18,8 +18,8 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    -name: Push images to Docker hub
-     run: docker push webapp:latest
+    - name: Push images to Docker hub
+      run: docker push webapp:latest
 
   deploy:
     runs-on: self-hosted
