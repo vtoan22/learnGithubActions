@@ -23,7 +23,7 @@ jobs:
 
     - name: Push images to Docker hub
       run: |
-        docker tag webapp tvtoan1321/myrepo
+        docker tag webapp:1.0 tvtoan1321/myrepo
         docker push tvtoan1321/myrepo
 
   deploy:
