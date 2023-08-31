@@ -50,6 +50,6 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        script: |
+        run: |
           echo "add" >> toan1.txt
-          docker pull ${{ secrets.DOCKER_USERNAME }}/${{ REPO_NAME }}:3
+          docker pull ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME:3
