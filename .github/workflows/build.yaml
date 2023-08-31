@@ -4,6 +4,11 @@ on:
   push:
     branches: [ main ]
 
+env:
+  REPO_NAME: myrepo
+  IMAGE_VERSION: 1.1
+  IMAGE_NAME: webapp
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,8 +17,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    # - name: Build Docker images
-    #   run: docker build -t webapp:1.1 -f Dockerfile .
+    - name: Build Docker images
+      run: docker build -t $IMAGE_NAME:$IMAGE_VERSION -f Dockerfile .
 
     - name: Login to Docker Hub
       uses: docker/login-action@v1
@@ -23,8 +28,8 @@ jobs:
 
     # - name: Push images to Docker hub
     #   run: |
-    #     docker tag webapp:1.1 tvtoan1321/myrepo
-    #     docker push tvtoan1321/myrepo
+    #     docker tag $IMAGE_NAME:$IMAGE_VERSION ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME
+    #     docker push ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME
 
   deploy:
     runs-on: self-hosted
