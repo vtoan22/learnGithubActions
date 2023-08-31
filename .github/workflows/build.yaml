@@ -47,4 +47,4 @@ jobs:
         script: |
           touch toan1.txt
           docker pull ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME:$TAG_NAME
-          docker run -dp 5000:5000 ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME:$TAG_NAME
+          #docker run -dp 5000:5000 ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME:$TAG_NAME
