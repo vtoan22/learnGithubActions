@@ -12,7 +12,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -34,7 +34,7 @@ jobs:
 
   deploy:
     runs-on: self-hosted
-    needs: build
+    #needs: build
     steps:       
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
