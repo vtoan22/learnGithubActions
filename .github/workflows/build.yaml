@@ -52,4 +52,4 @@ jobs:
         port: 22
         script: |
           echo "add" >> toan1.txt
-          docker run -dp 5000:5000 ${{ secrets.DOCKER_USERNAME }}/myrepo:3
+          docker pull ${{ secrets.DOCKER_USERNAME }}/${{ REPO_NAME }}:3
