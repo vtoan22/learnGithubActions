@@ -8,7 +8,7 @@ env:
   REPO_NAME: myrepo
   IMAGE_VERSION: 1.1
   IMAGE_NAME: webapp
-  TAG_NAME: 2.0
+  TAG_NAME: 3
 
 jobs:
   build:
@@ -44,6 +44,6 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          touch toan.txt
+          touch toan1.txt
           docker pull ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME:$TAG_NAME
           docker run -dp 5000:5000 ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME:$TAG_NAME
