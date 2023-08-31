@@ -29,11 +29,12 @@ jobs:
 
     - name: Push images to Docker hub
       run: |
-        docker tag $IMAGE_NAME:$IMAGE_VERSION ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME
+        docker tag $IMAGE_NAME:$IMAGE_VERSION ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME:$TAG_NAME
         docker push ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME:$TAG_NAME
 
   deploy:
     runs-on: self-hosted
+    needs: build
     steps:       
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
