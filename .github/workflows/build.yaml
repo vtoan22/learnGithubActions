@@ -51,5 +51,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          touch toan1.txt
-          docker pull $IMAGE_NAME:$IMAGE_VERSION
+          echo "add" >> toan1.txt
+          docker pull ${{ secrets.DOCKER_USERNAME }}/$REPO_NAME:$TAG_NAME
