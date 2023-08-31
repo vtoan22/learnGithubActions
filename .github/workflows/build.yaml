@@ -52,4 +52,4 @@ jobs:
         port: 22
         script: |
           echo "add" >> toan1.txt
-          docker run -p 5000:5000 tvtoan1321/myrepo:3
+          docker run -dp 5000:5000 tvtoan1321/myrepo:3
