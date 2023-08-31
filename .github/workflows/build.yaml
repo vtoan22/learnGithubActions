@@ -26,7 +26,7 @@ jobs:
     #     docker tag webapp:1.1 tvtoan1321/myrepo
     #     docker push tvtoan1321/myrepo
     - name: Try to ping to server
-      run: ping -c 4 192.168.140.5
+      run: ping -c 4 192.168.1.85
 
   deploy:
     runs-on: self-hosted
