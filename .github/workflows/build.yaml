@@ -52,4 +52,4 @@ jobs:
         port: 22
         script: |
           echo "add" >> toan1.txt
-          docker pull tvtoan1321/$REPO_NAME:$TAG_NAME
+          docker pull ${{ secrets.DOCKER_USERNAME }}/myrepo:3
